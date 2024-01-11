@@ -37,7 +37,8 @@ To use the application, run it with the following arguments:
 Example:
 
 ```
-./solar 2024-01-11 12:00:00 40.7128 -74.0060 "America/New_York"
+> ./solar 2024-01-11 12:00:00 40.7128 -74.0060 "America/New_York"
+▲ 2024-01-11 07:21:00 EST   ▼ 2024-01-11 16:55:00 EST
 ```
 
 This command calculates the sunrise and sunset times for New York City on January 11, 2024, at noon.
