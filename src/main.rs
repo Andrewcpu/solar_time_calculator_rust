@@ -67,11 +67,21 @@ fn sunrise_sunset(date_str: &str, time_str: &str, latitude: f64, longitude: f64)
 // Main function to demonstrate the usage
 fn main() {
     let args: Vec<String> = env::args().collect();
-
     if args.len() < 5 {
-        println!("{}", args[0]);
-        println!("Usage: program <date> <time> <latitude> <longitude>");
+        println!("Usage: program <date> <time> <latitude> <longitude> [time_zone]");
         return;
+    }
+    if args.len() > 6 {
+        println!("Usage: program <date> <time> <latitude> <longitude> [time_zone]");
+        return;
+    }
+
+    let timezone: &str;
+    // Check if there are more than 5 arguments (the sixth argument is at index 5)
+    if args.len() > 5 {
+        timezone = &args[5];
+    } else {
+        timezone = "America/New_York";
     }
 
     let date_str = &args[1];
@@ -79,7 +89,7 @@ fn main() {
     let latitude: f64 = args[3].parse().expect("Invalid latitude");
     let longitude: f64 = args[4].parse().expect("Invalid longitude");
 
-    let tz: Tz = "America/New_York".parse().unwrap(); // Change as needed
+    let tz: Tz = timezone.parse().unwrap(); // Change as needed
 
     match sunrise_sunset(date_str, time_str, latitude, longitude) {
         Some((sunrise_time, sunset_time)) => {
