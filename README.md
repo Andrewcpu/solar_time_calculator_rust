@@ -1,6 +1,6 @@
 # Sunrise and Sunset Calculator
 
-This Rust application calculates the sunrise and sunset times for a given date, time, latitude, and longitude. It is particularly useful for astronomy enthusiasts, photographers, hikers, or anyone interested in observing the natural phenomena of sunrise and sunset.
+This Rust application calculates the sunrise and sunset times for a given date, time, latitude, and longitude. It is based on the NOAA Global Monitor Division's solar position calculations. The original formulas can be found here: https://gml.noaa.gov/grad/solcalc/solareqns.PDF
 
 ## Features
 
